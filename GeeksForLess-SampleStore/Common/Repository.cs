@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeeksForLess_SampleStore
+namespace GeeksForLess_SampleStore.Logic.Common
 {
-    public class Class1
+    class Repository
     {
     }
 }
