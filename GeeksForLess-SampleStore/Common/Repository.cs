@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeeksForLess_SampleStore.Logic.Common
 {
-    class Repository
+    public abstract class Repository
     {
     }
 }

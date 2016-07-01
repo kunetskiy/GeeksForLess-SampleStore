@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeeksForLess_SampleStore.Logic.Common
 {
-    class AggregateRoot
+    public abstract class AggregateRoot : Entity
     {
     }
 }

@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="Common\AggregateRoot.cs" />
     <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\Repository.cs" />
     <Compile Include="Common\ValueObject.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
