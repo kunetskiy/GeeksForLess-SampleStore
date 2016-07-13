@@ -5,7 +5,7 @@ namespace GeeksForLess_SampleStore.Logic.Common
     public abstract class Repository<T>
         where T : AggregateRoot
     {
-        private readonly ISession _session;
+        protected readonly ISession _session;
 
         public Repository(ISession session)
         {

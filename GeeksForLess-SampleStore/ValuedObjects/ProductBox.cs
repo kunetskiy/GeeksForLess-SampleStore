@@ -1,22 +1,23 @@
 ﻿using GeeksForLess_SampleStore.Logic.Common;
+using GeeksForLess_SampleStore.Logic.Entities;
 
 namespace GeeksForLess_SampleStore.Logic.ValuedObjects
 {
-    public class ProductBox : ValueObject<ProductBox>
+    public sealed class ProductBox : ValueObject<ProductBox>
     {
-        public int ProductId { get; }
+        public Product Product { get; }
         public int Quantity { get; }
 
         private ProductBox() { }
-        public ProductBox(int productId, int quantity)
+        public ProductBox(Product product, int quantity) : this()
         {
-            ProductId = productId;
+            Product = product;
             Quantity = quantity;
         }
 
         internal override bool EqualsCore(ProductBox other)
         {
-            return this.ProductId.Equals(other.ProductId)
+            return this.Product.Equals(other.Product)
                 && this.Quantity.Equals(other.Quantity);
         }
 
@@ -24,7 +25,7 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
         {
             unchecked
             {
-                int hashCode = this.ProductId;
+                int hashCode = this.Product.GetHashCode();
                 hashCode = (hashCode * this.Quantity) ^ 255;
 
                 return hashCode;
@@ -33,7 +34,7 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
 
         public ProductBox ChangeQuantity(int quantity)
         {
-            return new ProductBox(this.ProductId, quantity);
+            return new ProductBox(this.Product, quantity);
         }
     }
 }

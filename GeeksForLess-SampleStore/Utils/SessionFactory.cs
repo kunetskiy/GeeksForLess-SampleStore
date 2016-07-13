@@ -25,7 +25,7 @@ namespace GeeksForLess_SampleStore.Logic.Utils
 
         private static ISessionFactory BuildSessionFactory(string connectionString)
         {
-            FluentConfiguration configuration = Fluently.Configure()
+            var configuration = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2012.ConnectionString(connectionString))
                 .Mappings(m => m.FluentMappings
                     .AddFromAssembly(Assembly.GetExecutingAssembly())

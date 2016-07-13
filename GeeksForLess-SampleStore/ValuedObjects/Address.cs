@@ -2,7 +2,7 @@
 using System.Text;
 using GeeksForLess_SampleStore.Logic.Common;
 
-namespace GeeksForLess_SampleStore.Logic.SharedKernel
+namespace GeeksForLess_SampleStore.Logic.ValuedObjects
 {
     public sealed class Address : ValueObject<Address>
     {
@@ -23,7 +23,7 @@ namespace GeeksForLess_SampleStore.Logic.SharedKernel
 
         private Address() { }
 
-        public Address(string country, string state, string zipCode, string city, string addressLine)
+        public Address(string country, string state, string zipCode, string city, string addressLine) : this()
         {
             if (string.IsNullOrEmpty(country))
                 throw new ArgumentNullException(nameof(country));
