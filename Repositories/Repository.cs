@@ -1,8 +1,10 @@
-﻿using NHibernate;
+﻿using GeeksForLess_SampleStore.Logic.Common;
+using GeeksForLess_SampleStore.Logic.RepositoryInterfaces;
+using NHibernate;
 
-namespace GeeksForLess_SampleStore.Logic.Common
+namespace GeeksForLess_SampleStore.Repositories
 {
-    public abstract class Repository<T>
+    public abstract class Repository<T> : IRepository<T>
         where T : AggregateRoot
     {
         protected readonly ISession _session;

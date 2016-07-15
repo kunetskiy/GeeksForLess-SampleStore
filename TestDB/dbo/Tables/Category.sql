@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Category] (
-    [Id]    INT            IDENTITY (1, 1) NOT NULL,
+    [CategoryId]    INT not null,
     [Title] NVARCHAR (200) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    PRIMARY KEY CLUSTERED ([CategoryId] ASC)
 );
 

@@ -12,8 +12,7 @@ namespace GeeksForLess_SampleStore.Logic.Entities
         protected ShoppingCart() { }
 
         private List<ShoppingCartItem> _items = new List<ShoppingCartItem>();
-        public IEnumerable<ShoppingCartItem> Items => _items;
-        public virtual int CustomerId { get; }
+        public virtual IEnumerable<ShoppingCartItem> Items => _items;
 
         public void AddToCart(Product product, int quantity)
         {

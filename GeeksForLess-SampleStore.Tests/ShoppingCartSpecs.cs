@@ -14,7 +14,7 @@ namespace GeeksForLess_SampleStore.Tests
         {
             ShoppingCart cart = ShoppingCart.Empty;
 
-            cart.AddToCart(TempProduct1, 5);
+            cart.AddToCart(Bread, 5);
 
             cart.ItemsCount.Should().Be(5);
         }
@@ -24,9 +24,9 @@ namespace GeeksForLess_SampleStore.Tests
         {
             ShoppingCart cart = ShoppingCart.Empty;
 
-            cart.AddToCart(TempProduct1, 5);
+            cart.AddToCart(Bread, 5);
 
-            cart.Total.Should().Be(TempProduct1.Price * 5);
+            cart.Total.Should().Be(Bread.Price * 5);
         }
 
         [Fact]
@@ -34,8 +34,8 @@ namespace GeeksForLess_SampleStore.Tests
         {
             ShoppingCart cart = ShoppingCart.Empty;
 
-            cart.AddToCart(TempProduct1, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Levanevskogo 13"));
-            cart.AddToCart(TempProduct1, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Kolodeznaya 21"));
+            cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Levanevskogo 13"));
+            cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Kolodeznaya 21"));
 
             cart.Items.First().Address.Should().NotBe(Address.Empty);
             cart.Items.First().Address.Should().NotBe(cart.Items.Last().Address);
@@ -46,8 +46,8 @@ namespace GeeksForLess_SampleStore.Tests
         {
             ShoppingCart cart = ShoppingCart.Empty;
 
-            cart.AddToCart(TempProduct1, 5);
-            cart.AddToCart(TempProduct1, 5);
+            cart.AddToCart(Bread, 5);
+            cart.AddToCart(Bread, 5);
             cart.ClearCart();
 
             cart.ItemsCount.Should().Be(0);

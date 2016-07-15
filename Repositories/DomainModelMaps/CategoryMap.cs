@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using GeeksForLess_SampleStore.Logic.Entities;
 
-namespace GeeksForLess_SampleStore.Logic.NHibernateMaps
+namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
 {
     public class CategoryMap : ClassMap<Category>
     {

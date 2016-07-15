@@ -1,7 +1,4 @@
-﻿using System;
-using NHibernate.Proxy;
-
-namespace GeeksForLess_SampleStore.Logic.Common
+﻿namespace GeeksForLess_SampleStore.Logic.Common
 {
     public abstract class Entity
     {
@@ -17,7 +14,7 @@ namespace GeeksForLess_SampleStore.Logic.Common
             if (ReferenceEquals(this, other))
                 return true;
 
-            if (GetRealType() != other.GetRealType())
+            if (GetType() != other.GetType())
                 return false;
 
             if (Id == 0 || other.Id == 0)
@@ -42,9 +39,9 @@ namespace GeeksForLess_SampleStore.Logic.Common
             return !(left == right);
         }
 
-        private Type GetRealType()
+        public override int GetHashCode()
         {
-            return NHibernateProxyHelper.GetClassWithoutInitializingProxy(this);
+            return (GetType().ToString() + Id).GetHashCode();
         }
     }
 }

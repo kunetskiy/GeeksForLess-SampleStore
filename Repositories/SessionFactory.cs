@@ -7,7 +7,7 @@ using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Conventions.Instances;
 using NHibernate;
 
-namespace GeeksForLess_SampleStore.Logic.Utils
+namespace GeeksForLess_SampleStore.Repositories
 {
     public static class SessionFactory
     {
@@ -52,7 +52,7 @@ namespace GeeksForLess_SampleStore.Logic.Utils
         {
             public void Apply(IIdentityInstance instance)
             {
-                instance.Column(instance.EntityType.Name + "ID");
+                instance.Column(instance.EntityType.Name + "Id");
                 instance.GeneratedBy.HiLo("[dbo].[Ids]", "NextHigh", "9", "EntityName = '" + instance.EntityType.Name + "'");
             }
         }

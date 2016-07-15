@@ -91,8 +91,8 @@
     <Compile Include="AdressSpecs.cs" />
     <Compile Include="AutoMapperSpecs.cs" />
     <Compile Include="ProductBoxSpecs.cs" />
+    <Compile Include="ProductSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCartIntegrationSpecs.cs" />
     <Compile Include="ShoppingCartSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,11 +106,10 @@
       <Project>{1b53c71e-29f7-4485-b6cc-9d78d5d4749d}</Project>
       <Name>GeeksForLess-SampleStore.Logic</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DB\TestDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\Repositories\GeeksForLess-SampleStore.Repositories.csproj">
+      <Project>{708602db-53bc-48db-8a6d-f213dfa5203e}</Project>
+      <Name>GeeksForLess-SampleStore.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
