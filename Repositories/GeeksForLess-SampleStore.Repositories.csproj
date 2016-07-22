@@ -53,9 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerRepository.cs" />
     <Compile Include="DomainModelMaps\CategoryMap.cs" />
     <Compile Include="DomainModelMaps\CustomerMap.cs" />
     <Compile Include="DomainModelMaps\ProductMap.cs" />
+    <Compile Include="DomainModelMaps\ShoppingCartItemMap.cs" />
     <Compile Include="DomainModelMaps\ShoppingCartMap.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

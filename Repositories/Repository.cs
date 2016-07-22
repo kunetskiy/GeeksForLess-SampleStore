@@ -21,11 +21,7 @@ namespace GeeksForLess_SampleStore.Repositories
 
         public void Save(T aggregateRoot)
         {
-            using (ITransaction transaction = _session.BeginTransaction())
-            {
-                _session.SaveOrUpdate(aggregateRoot);
-                transaction.Commit();
-            }
+            _session.SaveOrUpdate(aggregateRoot);
         }
     }
 }

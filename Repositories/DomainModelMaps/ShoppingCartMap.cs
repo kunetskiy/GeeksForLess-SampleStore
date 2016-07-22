@@ -7,9 +7,10 @@ namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
     {
         public ShoppingCartMap()
         {
-            Id(x => x.Id);
+            //HasOne(x => x.Customer).Constrained();
+            Id(x => x.Id).GeneratedBy.Assigned();// Foreign("Customer");
 
-            References(x => x.Items).Not.LazyLoad();
+            HasMany(x => x.Items).Cascade.All();
         }
     }
 }

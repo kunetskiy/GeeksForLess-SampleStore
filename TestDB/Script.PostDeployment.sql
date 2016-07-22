@@ -45,3 +45,18 @@ when not matched by target then
 insert (CustomerId, FirstName, LastName) values (CustomerId, FirstName, LastName)
 when not matched by source then
 delete;
+
+-- Reference Data for Ids
+Merge into Ids as target
+using (values
+	('Customer', 1),
+	('ShoppingCartItem', 1)
+)
+as source (EntityName, NextHigh)
+on target.EntityName = source.EntityName
+when matched then
+update set NextHigh = source.NextHigh
+when not matched by target then
+insert (EntityName, NextHigh) values (EntityName, NextHigh)
+when not matched by source then
+delete;

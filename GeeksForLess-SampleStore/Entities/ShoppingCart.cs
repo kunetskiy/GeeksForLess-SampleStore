@@ -9,37 +9,46 @@ namespace GeeksForLess_SampleStore.Logic.Entities
     {
         public static ShoppingCart Empty => new ShoppingCart();
 
-        protected ShoppingCart() { }
-
-        private List<ShoppingCartItem> _items = new List<ShoppingCartItem>();
-        public virtual IEnumerable<ShoppingCartItem> Items => _items;
-
-        public void AddToCart(Product product, int quantity)
+        protected ShoppingCart()
         {
-            this._items.Add(new ShoppingCartItem(product, quantity));
+            this.Items = new List<ShoppingCartItem>();
         }
+
+        internal ShoppingCart(int customerId) : this()
+        {
+            this.Id = customerId;
+        }
+
+        //public virtual Customer Customer { get; set; }
+
+        public IList<ShoppingCartItem> Items { get; set; }
 
         public void RemoveFromCart(int itemId)
         {
-            var itemToRemove = this._items.FirstOrDefault(item => item.Id == itemId);
+            var itemToRemove = this.Items.FirstOrDefault(item => item.Id == itemId);
             if (itemToRemove != null)
             {
-                this._items.Remove(itemToRemove);
+                this.Items.Remove(itemToRemove);
             }
         }
 
         public void ClearCart()
         {
-            this._items.Clear();
+            this.Items.Clear();
         }
 
         public decimal Total => Items.Sum(item => item.Box.Product.Price * item.Box.Quantity);
 
         public int ItemsCount => Items.Sum(item => item.Box.Quantity);
 
+        public void AddToCart(Product product, int quantity)
+        {
+            this.Items.Add(new ShoppingCartItem(this, product, quantity));
+        }
+
         public void AddToCart(Product product, int quantity, Address address)
         {
-            this._items.Add(new ShoppingCartItem(product, quantity, address));
+            this.Items.Add(new ShoppingCartItem(this, product, quantity, address));
         }
     }
 }

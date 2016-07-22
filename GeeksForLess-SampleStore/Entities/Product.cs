@@ -14,9 +14,9 @@ namespace GeeksForLess_SampleStore.Logic.Entities
             CategoryId = categoryId;
         }
 
-        public virtual string Title { get; }
-        public virtual decimal Price { get; }
-        public virtual int CategoryId { get; }
+        public string Title { get; }
+        public decimal Price { get; }
+        public int CategoryId { get; }
         public static Product Bread => new Product(1, 1, "Bread", 50m);
         public static Product TShirt => new Product(2, 2, "T-shirt", 850m);
     }

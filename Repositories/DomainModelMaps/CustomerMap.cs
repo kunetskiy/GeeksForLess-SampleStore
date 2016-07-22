@@ -1,4 +1,5 @@
-﻿using FluentNHibernate.Mapping;
+﻿using FluentNHibernate;
+using FluentNHibernate.Mapping;
 using GeeksForLess_SampleStore.Logic.Entities;
 
 namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
@@ -15,7 +16,7 @@ namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
                 y.Map(x => x.LastName);
             });
 
-            HasOne(x => x.Cart).Not.LazyLoad();
+            HasOne<ShoppingCart>(Reveal.Member<Customer>("_cart")).Cascade.All();
         }
     }
 }

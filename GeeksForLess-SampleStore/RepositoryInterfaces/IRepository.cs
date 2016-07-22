@@ -6,5 +6,6 @@ namespace GeeksForLess_SampleStore.Logic.RepositoryInterfaces
         where T : AggregateRoot
     {
         T GetById(int id);
+        void Save(T aggregateRoot);
     }
 }

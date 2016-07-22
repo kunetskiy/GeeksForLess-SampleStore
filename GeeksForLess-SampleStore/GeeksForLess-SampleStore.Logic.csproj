@@ -48,6 +48,7 @@
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShoppingCart.cs" />
+    <Compile Include="RepositoryInterfaces\ICustomerRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRepository.cs" />
     <Compile Include="RepositoryInterfaces\IProductRepository.cs" />
     <Compile Include="ValuedObjects\ProductBox.cs" />

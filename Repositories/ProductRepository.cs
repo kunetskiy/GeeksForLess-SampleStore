@@ -7,22 +7,15 @@ using NHibernate.Linq;
 
 namespace GeeksForLess_SampleStore.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
-        protected readonly ISession _session;
-        public ProductRepository(ISession session)
+        public ProductRepository(ISession session) : base(session)
         {
-            _session = session;
         }
 
         public IReadOnlyCollection<Product> GetAll()
         {
             return _session.Query<Product>().ToList();
-        }
-
-        public Product GetById(int id)
-        {
-            return _session.Get<Product>(id);
         }
     }
 }

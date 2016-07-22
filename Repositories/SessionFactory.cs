@@ -26,11 +26,14 @@ namespace GeeksForLess_SampleStore.Repositories
         private static ISessionFactory BuildSessionFactory(string connectionString)
         {
             var configuration = Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2012.ConnectionString(connectionString))
+                .Database(MsSqlConfiguration
+                            .MsSql2012
+                            .ConnectionString(connectionString))
                 .Mappings(m => m.FluentMappings
                     .AddFromAssembly(Assembly.GetExecutingAssembly())
                     .Conventions.Add(
-                        ForeignKey.EndsWith("ID"),
+                        FluentNHibernate.Conventions.Helpers.DefaultLazy.Never(),
+                        ForeignKey.EndsWith("Id"),
                         ConventionBuilder.Property
                             .When(criteria => criteria.Expect(x => x.Nullable, Is.Not.Set), x => x.Not.Nullable()))
                     .Conventions.Add<TableNameConvention>()

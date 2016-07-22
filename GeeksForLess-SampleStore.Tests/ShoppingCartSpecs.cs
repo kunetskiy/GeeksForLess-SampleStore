@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using FluentAssertions;
+﻿using FluentAssertions;
 using GeeksForLess_SampleStore.Logic.Entities;
-using GeeksForLess_SampleStore.Logic.ValuedObjects;
 using Xunit;
 using static GeeksForLess_SampleStore.Logic.Entities.Product;
 
@@ -29,17 +27,17 @@ namespace GeeksForLess_SampleStore.Tests
             cart.Total.Should().Be(Bread.Price * 5);
         }
 
-        [Fact]
-        public void We_can_specify_shipping_address_for_any_item_inside()
-        {
-            ShoppingCart cart = ShoppingCart.Empty;
+        //[Fact]
+        //public void We_can_specify_shipping_address_for_any_item_inside()
+        //{
+        //    ShoppingCart cart = ShoppingCart.Empty;
 
-            cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Levanevskogo 13"));
-            cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Kolodeznaya 21"));
+        //    cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Levanevskogo 13"));
+        //    cart.AddToCart(Bread, 5, new Address("Ukraine", "Nikolaev", "54003", "Nikolaev", "Kolodeznaya 21"));
 
-            cart.Items.First().Address.Should().NotBe(Address.Empty);
-            cart.Items.First().Address.Should().NotBe(cart.Items.Last().Address);
-        }
+        //    cart.Items.First().Address.Should().NotBe(Address.Empty);
+        //    cart.Items.First().Address.Should().NotBe(cart.Items.Last().Address);
+        //}
 
         [Fact]
         public void Cart_is_empty_after_clearing()
