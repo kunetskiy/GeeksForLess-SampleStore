@@ -16,17 +16,17 @@ delete;
 -- Reference Data for Product
 Merge into Product as target
 using (values
-	(1, 1, 'Bread', 50, 10),
-	(2, 1, 'Pizza', 150, 5),
-	(3, 2, 'T-shirt', 850, 3),
-	(4, 2, 'Jacket', 1500, 1)
+	(1, 1, 'Bread', 50),
+	(2, 1, 'Pizza', 150),
+	(3, 2, 'T-shirt', 850),
+	(4, 2, 'Jacket', 1500)
 )
-as source (ProductId, CategoryId, Title, Price, QuantityInStock)
+as source (ProductId, CategoryId, Title, Price)
 on target.ProductId = source.ProductId
 when matched then
-update set CategoryId = source.CategoryId, Title = source.Title, Price = source.Price, QuantityInStock = source.QuantityInStock
+update set CategoryId = source.CategoryId, Title = source.Title, Price = source.Price
 when not matched by target then
-insert (ProductId, CategoryId, Title, Price, QuantityInStock) values (ProductId, CategoryId, Title, Price, QuantityInStock)
+insert (ProductId, CategoryId, Title, Price) values (ProductId, CategoryId, Title, Price)
 when not matched by source then
 delete;
 
@@ -60,3 +60,6 @@ when not matched by target then
 insert (EntityName, NextHigh) values (EntityName, NextHigh)
 when not matched by source then
 delete;
+
+-- Cleanup ShoppingCartItems 
+Delete from ShoppingCartItem

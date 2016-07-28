@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeeksForLess_SampleStore.Logic.Entities;
-using GeeksForLess_SampleStore.Logic.RepositoryInterfaces;
+using GeeksForLess_SampleStore.ShoppingCart.Entities;
 using NHibernate;
 using NHibernate.Linq;
 
-namespace GeeksForLess_SampleStore.Repositories
+namespace GeeksForLess_SampleStore.ShoppingCartRepositories
 {
-    public class CustomerRepository : Repository<Customer>, ICustomerRepository
+    public class CustomerRepository : Repository<Customer>
     {
         public CustomerRepository(ISession session) : base(session)
         {

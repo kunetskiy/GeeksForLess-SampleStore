@@ -1,4 +1,4 @@
-﻿namespace GeeksForLess_SampleStore.Logic.Common
+﻿namespace GeeksForLess_SampleStore.Core
 {
     public abstract class ValueObject<T>
         where T : ValueObject<T>
@@ -13,14 +13,14 @@
             return EqualsCore(valueObject);
         }
 
-        internal abstract bool EqualsCore(T valueObject);
+        protected abstract bool EqualsCore(T valueObject);
 
         public override int GetHashCode()
         {
             return GetHashCodeCore();
         }
 
-        internal abstract int GetHashCodeCore();
+        protected abstract int GetHashCodeCore();
 
         public static bool operator ==(ValueObject<T> left, ValueObject<T> right)
         {

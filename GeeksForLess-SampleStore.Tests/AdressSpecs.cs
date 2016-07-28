@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using GeeksForLess_SampleStore.Logic.ValuedObjects;
+using GeeksForLess_SampleStore.Core.ValuedObjects;
 using Xunit;
 
 namespace GeeksForLess_SampleStore.Tests

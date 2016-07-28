@@ -1,7 +1,7 @@
-﻿using GeeksForLess_SampleStore.Logic.Common;
-using GeeksForLess_SampleStore.Logic.Entities;
+﻿using GeeksForLess_SampleStore.Core;
+using GeeksForLess_SampleStore.ShoppingCart.Entities;
 
-namespace GeeksForLess_SampleStore.Logic.ValuedObjects
+namespace GeeksForLess_SampleStore.ShoppingCart.ValuedObjects
 {
     public sealed class ProductBox : ValueObject<ProductBox>
     {
@@ -15,13 +15,13 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
             Quantity = quantity;
         }
 
-        internal override bool EqualsCore(ProductBox other)
+        protected override bool EqualsCore(ProductBox other)
         {
             return this.Product.Equals(other.Product)
                 && this.Quantity.Equals(other.Quantity);
         }
 
-        internal override int GetHashCodeCore()
+        protected override int GetHashCodeCore()
         {
             unchecked
             {

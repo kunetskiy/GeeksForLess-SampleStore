@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using GeeksForLess_SampleStore.Logic.Common;
+using GeeksForLess_SampleStore.Core;
 
-namespace GeeksForLess_SampleStore.Logic.ValuedObjects
+namespace GeeksForLess_SampleStore.ShoppingCart.ValuedObjects
 {
     public sealed class VisitingCard : ValueObject<VisitingCard>
     {
@@ -24,7 +24,7 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
             LastName = lastName;
         }
 
-        internal override bool EqualsCore(VisitingCard other)
+        protected override bool EqualsCore(VisitingCard other)
         {
             return (FirstName == null && other.FirstName == null
                        || ReferenceEquals(FirstName, other.FirstName)
@@ -34,7 +34,7 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
                        || LastName.Equals(other.LastName, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        internal override int GetHashCodeCore()
+        protected override int GetHashCodeCore()
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder

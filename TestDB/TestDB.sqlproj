@@ -135,6 +135,7 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="dbo\Tables\Warehouse.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TestDB.publish.xml" />

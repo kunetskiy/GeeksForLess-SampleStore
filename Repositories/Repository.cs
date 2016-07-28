@@ -1,10 +1,9 @@
-﻿using GeeksForLess_SampleStore.Logic.Common;
-using GeeksForLess_SampleStore.Logic.RepositoryInterfaces;
+﻿using GeeksForLess_SampleStore.Core;
 using NHibernate;
 
-namespace GeeksForLess_SampleStore.Repositories
+namespace GeeksForLess_SampleStore.ShoppingCartRepositories
 {
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class Repository<T>
         where T : AggregateRoot
     {
         protected readonly ISession _session;

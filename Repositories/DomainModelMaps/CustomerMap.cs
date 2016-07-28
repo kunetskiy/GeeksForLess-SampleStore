@@ -1,8 +1,8 @@
 ﻿using FluentNHibernate;
 using FluentNHibernate.Mapping;
-using GeeksForLess_SampleStore.Logic.Entities;
+using GeeksForLess_SampleStore.ShoppingCart.Entities;
 
-namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
+namespace GeeksForLess_SampleStore.ShoppingCartRepositories.DomainModelMaps
 {
     public class CustomerMap : ClassMap<Customer>
     {
@@ -16,7 +16,7 @@ namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
                 y.Map(x => x.LastName);
             });
 
-            HasOne<ShoppingCart>(Reveal.Member<Customer>("_cart")).Cascade.All();
+            HasOne<ShoppingCart.Entities.ShoppingCart>(Reveal.Member<Customer>("_cart")).Cascade.All();
         }
     }
 }

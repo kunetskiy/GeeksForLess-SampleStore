@@ -1,4 +1,4 @@
-﻿namespace GeeksForLess_SampleStore.Logic.Common
+﻿namespace GeeksForLess_SampleStore.Core
 {
     public abstract class Entity
     {

@@ -113,10 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdressSpecs.cs" />
+    <Compile Include="AutomapperDtos\ProductDto.cs" />
+    <Compile Include="AutomapperDtos\ShoppingCartDto.cs" />
     <Compile Include="AutoMapperSpecs.cs" />
-    <Compile Include="CustomerSpecs.cs" />
-    <Compile Include="ProductBoxSpecs.cs" />
-    <Compile Include="ProductSpecs.cs" />
+    <Compile Include="CustomerPersistanceSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCartSpecs.cs" />
   </ItemGroup>
@@ -131,13 +131,17 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeeksForLess-SampleStore\GeeksForLess-SampleStore.Logic.csproj">
-      <Project>{1b53c71e-29f7-4485-b6cc-9d78d5d4749d}</Project>
-      <Name>GeeksForLess-SampleStore.Logic</Name>
+    <ProjectReference Include="..\GeeksForLess-SampleStore.ShoppingCart\GeeksForLess-SampleStore.ShoppingCart.csproj">
+      <Project>{A0B93395-51B5-4B14-B638-A85B226AA240}</Project>
+      <Name>GeeksForLess-SampleStore.ShoppingCart</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Repositories\GeeksForLess-SampleStore.Repositories.csproj">
+    <ProjectReference Include="..\GeeksForLess-SampleStore\GeeksForLess-SampleStore.Core.csproj">
+      <Project>{1b53c71e-29f7-4485-b6cc-9d78d5d4749d}</Project>
+      <Name>GeeksForLess-SampleStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\GeeksForLess-SampleStore.ShoppingCartRepositories.csproj">
       <Project>{708602db-53bc-48db-8a6d-f213dfa5203e}</Project>
-      <Name>GeeksForLess-SampleStore.Repositories</Name>
+      <Name>GeeksForLess-SampleStore.ShoppingCartRepositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +150,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\TestDB\Script.PostDeployment.sql">
+      <Link>Script.PostDeployment.sql</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

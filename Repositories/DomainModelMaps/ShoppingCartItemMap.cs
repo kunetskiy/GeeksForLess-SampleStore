@@ -1,7 +1,8 @@
-﻿using FluentNHibernate.Mapping;
-using GeeksForLess_SampleStore.Logic.Entities;
+﻿using FluentNHibernate;
+using FluentNHibernate.Mapping;
+using GeeksForLess_SampleStore.ShoppingCart.Entities;
 
-namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
+namespace GeeksForLess_SampleStore.ShoppingCartRepositories.DomainModelMaps
 {
     public class ShoppingCartItemMap : ClassMap<ShoppingCartItem>
     {
@@ -9,7 +10,7 @@ namespace GeeksForLess_SampleStore.Repositories.DomainModelMaps
         {
             Id(x => x.Id);
 
-            References(x => x.Cart).Column("ShoppingCartId");
+            Map(Reveal.Member<ShoppingCartItem>("_cartId")).Column("ShoppingCartId"); //ShoppingCartId
 
             Component(x => x.Address, y =>
             {

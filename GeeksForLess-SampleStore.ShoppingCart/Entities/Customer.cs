@@ -1,11 +1,11 @@
-﻿using GeeksForLess_SampleStore.Logic.Common;
-using GeeksForLess_SampleStore.Logic.ValuedObjects;
+﻿using GeeksForLess_SampleStore.Core;
+using GeeksForLess_SampleStore.ShoppingCart.ValuedObjects;
 
-namespace GeeksForLess_SampleStore.Logic.Entities
+namespace GeeksForLess_SampleStore.ShoppingCart.Entities
 {
     public class Customer : AggregateRoot
     {
-        public VisitingCard VisitingCard { get; }
+        public VisitingCard VisitingCard { get; private set; }
 
         private ShoppingCart _cart;
 

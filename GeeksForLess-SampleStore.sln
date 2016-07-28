@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.Logic", "GeeksForLess-SampleStore\GeeksForLess-SampleStore.Logic.csproj", "{1B53C71E-29F7-4485-B6CC-9D78D5D4749D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.Core", "GeeksForLess-SampleStore\GeeksForLess-SampleStore.Core.csproj", "{1B53C71E-29F7-4485-B6CC-9D78D5D4749D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.Tests", "GeeksForLess-SampleStore.Tests\GeeksForLess-SampleStore.Tests.csproj", "{CA6E5FF5-9628-4907-A106-570767E21BDF}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestDB", "TestDB\TestDB.sqlproj", "{58985F4C-7E0A-4ADF-8C65-E39A00540C47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.Repositories", "Repositories\GeeksForLess-SampleStore.Repositories.csproj", "{708602DB-53BC-48DB-8A6D-F213DFA5203E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.ShoppingCartRepositories", "Repositories\GeeksForLess-SampleStore.ShoppingCartRepositories.csproj", "{708602DB-53BC-48DB-8A6D-F213DFA5203E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.ShoppingCart", "GeeksForLess-SampleStore.ShoppingCart\GeeksForLess-SampleStore.ShoppingCart.csproj", "{A0B93395-51B5-4B14-B638-A85B226AA240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForLess-SampleStore.Warehouse", "Warehouse\GeeksForLess-SampleStore.Warehouse.csproj", "{8BAF813A-146D-477F-92EA-5E32F09EBAE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{708602DB-53BC-48DB-8A6D-F213DFA5203E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{708602DB-53BC-48DB-8A6D-F213DFA5203E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{708602DB-53BC-48DB-8A6D-F213DFA5203E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B93395-51B5-4B14-B638-A85B226AA240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B93395-51B5-4B14-B638-A85B226AA240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B93395-51B5-4B14-B638-A85B226AA240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B93395-51B5-4B14-B638-A85B226AA240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BAF813A-146D-477F-92EA-5E32F09EBAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAF813A-146D-477F-92EA-5E32F09EBAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAF813A-146D-477F-92EA-5E32F09EBAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAF813A-146D-477F-92EA-5E32F09EBAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

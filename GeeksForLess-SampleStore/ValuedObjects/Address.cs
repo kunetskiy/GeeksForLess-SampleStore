@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
-using GeeksForLess_SampleStore.Logic.Common;
 
-namespace GeeksForLess_SampleStore.Logic.ValuedObjects
+namespace GeeksForLess_SampleStore.Core.ValuedObjects
 {
     public sealed class Address : ValueObject<Address>
     {
@@ -43,10 +42,10 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
             AddressLine = addressLine;
         }
 
-        internal override bool EqualsCore(Address other)
+        protected override bool EqualsCore(Address other)
         {
-            return (Country == null && other.Country == null 
-                        || ReferenceEquals(Country, other.Country) 
+            return (Country == null && other.Country == null
+                        || ReferenceEquals(Country, other.Country)
                         || Country.Equals(other.Country, StringComparison.InvariantCultureIgnoreCase))
                 && (State == null && other.State == null
                         || ReferenceEquals(State, other.State)
@@ -62,7 +61,7 @@ namespace GeeksForLess_SampleStore.Logic.ValuedObjects
                         || AddressLine.Equals(other.AddressLine, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        internal override int GetHashCodeCore()
+        protected override int GetHashCodeCore()
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder

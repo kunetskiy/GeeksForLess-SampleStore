@@ -4,16 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B53C71E-29F7-4485-B6CC-9D78D5D4749D}</ProjectGuid>
+    <ProjectGuid>{A0B93395-51B5-4B14-B638-A85B226AA240}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeeksForLess_SampleStore.Logic</RootNamespace>
-    <AssemblyName>GeeksForLess_SampleStore.Logic</AssemblyName>
+    <RootNamespace>GeeksForLess_SampleStore.ShoppingCart</RootNamespace>
+    <AssemblyName>GeeksForLess-SampleStore.ShoppingCart</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,12 +25,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,21 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\AggregateRoot.cs" />
-    <Compile Include="Common\Entity.cs" />
-    <Compile Include="Common\ValueObject.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShoppingCart.cs" />
-    <Compile Include="RepositoryInterfaces\ICustomerRepository.cs" />
-    <Compile Include="RepositoryInterfaces\IRepository.cs" />
-    <Compile Include="RepositoryInterfaces\IProductRepository.cs" />
-    <Compile Include="ValuedObjects\ProductBox.cs" />
     <Compile Include="Entities\ShoppingCartItem.cs" />
+    <Compile Include="ValuedObjects\ProductBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValuedObjects\Address.cs" />
     <Compile Include="ValuedObjects\VisitingCard.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeeksForLess-SampleStore\GeeksForLess-SampleStore.Core.csproj">
+      <Project>{1b53c71e-29f7-4485-b6cc-9d78d5d4749d}</Project>
+      <Name>GeeksForLess-SampleStore.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
