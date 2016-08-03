@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.IO;
 using AutoMapper;
 using FluentAssertions;
-using GeeksForLess_SampleStore.Repositories;
 using GeeksForLess_SampleStore.ShoppingCart.Entities;
 using GeeksForLess_SampleStore.ShoppingCart.ValuedObjects;
 using GeeksForLess_SampleStore.ShoppingCartRepositories;
@@ -30,7 +29,7 @@ namespace GeeksForLess_SampleStore.Tests
 
             _mapper = config.CreateMapper();
 
-            Bread = _mapper.Map<Product>(new ProductDto { Id = 1, CategoryId = 1, Price = 50, Title = "Bread" });
+            Bread = _mapper.Map<Product>(new ProductDto { Id = 1, CategoryId = 1, Price = 50, Title = "Bread", AvailableQuantity = 5 });
 
             var connectionString = @"Server=(localdb)\GeeksForLess_SampleStore;Database=TestDB;Integrated Security=True";
 

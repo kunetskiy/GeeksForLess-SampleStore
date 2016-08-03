@@ -7,7 +7,7 @@ using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Conventions.Instances;
 using NHibernate;
 
-namespace GeeksForLess_SampleStore.Repositories
+namespace GeeksForLess_SampleStore.ShoppingCartRepositories
 {
     public static class SessionFactory
     {

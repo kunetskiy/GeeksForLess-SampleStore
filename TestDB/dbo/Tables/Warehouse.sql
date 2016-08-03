@@ -1,4 +1,5 @@
 ﻿CREATE TABLE [dbo].[Warehouse]
 (
-	[Id] INT NOT NULL PRIMARY KEY
+	[WarehouseId] INT NOT NULL PRIMARY KEY identity(1,1),
+	[Title] nvarchar(200) not null
 )
